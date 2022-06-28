@@ -1,0 +1,46 @@
+create table Employee(
+User_Id int primary key,
+Username varchar(30),
+FirstName varchar(30),
+LastName varchar(30),
+Department varchar(30)
+);
+
+--creates table with 5 columns
+
+insert into Employee(User_Id,Username,FirstName,LastName,Department)
+values (3001, 'McLuvin99', 'Mack', 'Intosh', 'IT');
+
+insert into Employee(User_Id,Username,FirstName,LastName,Department)
+values (3002, 'GoofyGoob05', 'Bob', 'Sponge', 'IT');
+
+insert into Employee(User_Id,Username,FirstName,LastName,Department)
+values (3003, 'PStar06', 'Pat', 'Trick', 'Front');
+
+insert into Employee(User_Id,Username,FirstName,LastName,Department)
+values (3004, 'Starlight22', 'Hughie', 'Newton', 'Front');
+
+insert into Employee(User_Id,Username,FirstName,LastName,Department)
+values (3005, 'Boondega', 'Huey', 'Newton', 'HR');
+
+--inserts 5 different rows
+
+update Employee set Username='PatrickStar06' where Username= 'PStar06'; --these changes are permanent
+
+update Employee set Department= 'Frontline' where Username= 'Starlight22';
+
+delete from Employee where User_Id= '3005'; --these records will be erased
+delete from Employee where FirstName= 'Bob';
+
+alter table Employee add column StartDate varchar(30); --adds a new column/field 
+
+alter table Employee rename column User_Id to IdNumber; --renames a column name
+
+select* from Employee where Department='IT'; --using one field to select a record
+
+insert into Employee(IdNumber,Username,FirstName,LastName,Department,StartDate) --make note of all changes
+values (3007, 'Starlight22', 'Hughie', 'Newton', 'Front','06/28/22'); 
+
+select* from Employee where LastName= 'Newton' and Department= 'Front'; --using 2 fields to select a record
+
+drop table Employee; --will drop table (it took the database along with it so be careful)
